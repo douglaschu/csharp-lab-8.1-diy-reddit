@@ -1,0 +1,18 @@
+<a href="url{{post.data.permalink}}">
+<h3>{{ post.data.title }}</h3>
+<img src="{{post.data.thumbnail}}" alt="">
+<video
+    *ngIf="post.data.media?.reddit_video?.fallback_url != null"
+    width="320"
+    height="240"
+    controls
+  >
+    <source
+      src="{{ post.data.media?.reddit_video?.fallback_url }}"
+      type="video/mp4"
+    />
+    Your browser does not support the video tag.
+  </video>
+<!-- embed video -->
+</a>
+<!-- this currently will: display images AND video. but will not display alt text -->

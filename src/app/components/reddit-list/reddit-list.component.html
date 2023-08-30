@@ -1,0 +1,4 @@
+<input type="text" [(ngModel)]="subreddit" />
+<button (click)="CallApi()">Search Subreddit</button>
+<p>{{status}}</p>
+<app-reddit-post *ngFor="let p of redditResult.data.children" [post]="p"></app-reddit-post>
